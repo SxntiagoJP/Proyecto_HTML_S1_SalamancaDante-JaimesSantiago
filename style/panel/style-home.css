@@ -1,0 +1,789 @@
+/*Fonts*/
+
+@font-face {
+    font-family: 'Myriad Pro Light';
+    src: url(../../font/MyriadPro-Light.otf);
+}
+
+@font-face {
+    font-family: 'Myriad Pro Regular';
+    src: url(../../font/MyriadPro-Regular.otf);
+}
+
+@font-face {
+    font-family: 'Myriad Pro Semibold';
+    src: url(../../font/MyriadPro-Semibold.otf);
+}
+
+@font-face {
+    font-family: 'Myriad Pro Bold';
+    src: url(../../font/MyriadPro-Bold.otf);
+}
+
+/*ANIMATIONS*/
+
+/*Delete animations*/
+
+@keyframes --close {
+    0% {rotate: -12deg; margin-left: -0.1vw; margin-top: -0.2vw; margin-bottom: 0.2vw;}
+    100% {rotate: 0deg; margin-left: 0; margin-top: 0; margin-bottom: 0;}    
+}
+
+@keyframes --open {
+    0% {rotate: 0deg; margin-left: 0; margin-top: 0; margin-bottom: 0;}
+    100% {rotate: -12deg; margin-left: -0.1vw; margin-top: -0.2vw; margin-bottom: 0.2vw;}    
+}
+
+/*Fade animations*/
+
+@keyframes --fadeIn {
+    0% {opacity: 0%;} 100% {opacity: 100%;}    
+}
+
+/*Diagram animations*/
+
+@keyframes --fill {
+    to {stroke-dasharray: var(--percentage) 100;}    
+}
+
+/*Rotate animations*/
+
+@keyframes --rotate {
+    0% {rotate: 0deg;} 100% {rotate: 90deg;} 
+}
+
+@keyframes --rotateBack {
+    0% {rotate: 90deg;} 100% {rotate: 0deg;} 
+}
+
+/*Shake animations*/
+
+@keyframes --shake {
+    0% {rotate: 0deg;} 25% {rotate: 10deg;}
+    50% {rotate: 0;} 75% {rotate: -10deg} 100% {rotate: 0;}
+}
+
+@keyframes --shakeBack {
+    0% {rotate: 0deg;} 25% {rotate: -10deg;}
+    50% {rotate: 0;} 75% {rotate: 10deg} 100% {rotate: 0;}
+}
+
+/*Logo animations*/
+
+@keyframes --turn {
+    0% {transform: scaleX(1);} 100% {transform: scaleX(-1);} 
+}
+
+@keyframes --turnBack {
+    0% {transform: scaleX(-1);} 100% {transform: scaleX(1);} 
+}
+
+/*Report animations*/
+
+@keyframes --walkBackwards {
+    0% {margin-top: 0;} 25% {margin-top: 0.6vw;}
+    50% {margin-top: 0;} 75% {margin-top: -0.6vw} 100% {margin-top: 0;}
+}
+
+@keyframes --walkForwards {
+    0% {margin-top: 0;} 25% {margin-top: -0.6vw;}
+    50% {margin-top: 0;} 75% {margin-top: 0.6vw} 100% {margin-top: 0;}
+}
+
+/*Zoom animations*/
+
+@keyframes --zoomIn {
+    0% {width: 2vw; height: 2vw;} 100% {width: 3vw; height: 3vw;}
+}
+
+@keyframes --zoomOut {
+    0% {width: 3vw; height: 3vw;} 100% {width: 2vw; height: 2vw;}
+}
+
+body::-webkit-scrollbar {
+    width: 0.3vw;
+    background-color: #00000000;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #ff6f2c;
+    border-radius: 10vw;
+}
+
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/*Header container*/
+
+#header {
+    z-index: 1;
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    height: 4.4vw;
+    background-color: #ffffff;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 4.4vw;
+    border-bottom: 1px solid #a0a0a0;
+}
+
+/*Button information texts: "Añadir" / "Refrescar" / "Eliminar" / "Reportar" / "Ayuda"*/
+
+.header .header__infotext {
+    margin-left: 0.5vw;
+    color: #000000;
+    font-size: 1.2vw;
+    font-family: 'Myriad Pro Semibold', sans-serif;
+}
+
+/*Add button: next to "Añadir"*/
+
+.header .header__add {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 11vw;
+    text-decoration: none;
+    animation: --fadeIn 1s ease 0.1s both;
+}
+
+.header .header__add .header__add--parentcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 2vw;
+    height: 2vw;
+    overflow: visible;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__add .header__add--parentcontainer .header__add--childcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 100%;
+    animation: --shakeBack 0.2s ease-in-out both;
+    overflow: hidden;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__add .header__add--parentcontainer .header__add--childcontainer .header__add--btn {
+    width: 2vw;
+    height: 2vw;
+    background: url(../../img/plus.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: --zoomOut 0.2s ease both;
+}
+
+.header .header__add .header__add--parentcontainer .header__add--childcontainer .header__add--btn:hover {
+    animation: --zoomIn 0.2s ease both;
+}
+
+.header .header__add .header__add--parentcontainer .header__add--childcontainer:hover {
+    animation: --shake 0.000001s ease-in-out both;
+    width: 2.5vw;
+    height: 2.5vw;
+}
+
+.header .header__add .header__add--parentcontainer:hover {
+    height: 2.5vw;
+}
+
+/*Reload button: next to "Refrescar"*/
+
+.header .header__reload {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    animation: --fadeIn 1s ease 0.1s both;
+}
+
+.header .header__reload .header__reload--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1.7666vw;
+    height: 1.7666vw;
+    overflow: visible;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__reload .header__reload--container .header__reload--btn {
+    width: 1.7666vw;
+    height: 1.7666vw;
+    background: url(../../img/reload.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: --rotateBack 0.2s ease both;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__reload .header__reload--container:hover > .header__reload--btn {
+    animation: --rotate 0.2s ease both;
+    width: 2.2666vw;
+    height: 2.2666vw;
+}
+
+.header .header__reload .header__reload--container:hover {
+    height: 2.2666vw;
+}
+
+/*Delete button: next to "Eliminar"*/
+
+.header .header__delete {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    animation: --fadeIn 1s ease 0.1s both;
+}
+
+.header .header__delete .header__delete--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1.5666vw;
+    height: 1.9999vw;
+    animation: --shakeBack 0.2s ease-in-out both;
+    overflow: visible;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__delete .header__delete--container .header__delete--btntop {
+    margin: 0;
+    background: url(../../img/trash.svg);
+    width: 1.5666vw;
+    height: 0.4333vw;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: --close 0.2s ease both;
+    transition-property: all;
+    transition-duration: 0.5s;    
+}
+
+.header .header__delete .header__delete--container .header__delete--btncontainer {
+    margin: 0;
+    background: url(../../img/trash.svg);
+    width: 1.5666vw;
+    height: 1.5666vw;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__delete .header__delete--container:hover > .header__delete--btntop {
+    animation: --open 0.2s ease both;
+    width: 2.0666vw;
+    height: 0.5716vw;
+}
+
+.header .header__delete .header__delete--container:hover {
+    animation: --shake 0.000001s ease-in-out both;
+    height: 2.6382vw;
+}
+
+.header .header__delete .header__delete--container:hover > .header__delete--btncontainer {
+    width: 2.0666vw;
+    height: 2.0666vw;
+}
+
+/*Logo button*/
+
+.header .header__home {
+    margin: auto 6vw auto 0;
+}
+
+.header .header__home .header__home--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 2.313vw;
+    height: 2.313vw;
+    animation: --fadeIn 1s ease 0.1s both;
+    overflow: visible;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__home .header__home--container .header__home--btn {
+    width: 2.313vw;
+    height: 2.313vw;
+    animation: --turnBack 0.2s ease both;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__home .header__home--container:hover > .header__home--btn {
+    animation: --turn 0.2s ease both;
+    width: 2.813vw;
+    height: 2.813vw;
+}
+
+.header .header__home .header__home--container:hover {
+    height: 2.813vw;
+}
+
+/*Report button: next to "Reportar"*/
+
+.header .header__report {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    animation: --fadeIn 1s ease 0.1s both;
+}
+
+.header .header__report .header__report--container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: -0.0666vw;
+    width: 1.72vw;
+    height: 2vw;
+    animation: --shakeBack 0.2s ease-in-out both;
+    overflow: visible;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__report .header__report--container .header__report--btnL {
+    width: 0.26vw;
+    height: 2vw;
+    margin: 0;
+    background: url(../../img/bug.svg);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: --walkBackwards 0.2s ease-in-out both;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__report .header__report--container .header__delete--btnbody {
+    width: 1.2vw;
+    height: 2vw;
+    margin: 0;
+    background: url(../../img/bug.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__report .header__report--container .header__delete--btnR {
+    width: 0.26vw;
+    height: 2vw;
+    margin: 0;
+    background: url(../../img/bug.svg);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: --walkForwards 0.2s ease-in-out both;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__report .header__report--container:hover > .header__report--btnL {
+    animation: --walkForwards 0.4s ease-in-out infinite both;
+    width: 0.3vw;
+    height: 2.5814vw;
+}
+
+.header .header__report .header__report--container:hover > .header__delete--btnR {
+    animation: --walkBackwards 0.4s ease-in-out infinite both;
+    width: 0.3vw;
+    height: 2.5814vw;
+}
+
+.header .header__report .header__report--container:hover > .header__delete--btnbody {
+    width: 1.5488vw;
+    height: 2.5814vw;
+}
+
+.header .header__report .header__report--container:hover {
+    animation: --shake 0.4s ease-in-out infinite both;
+    margin: -0.31vw;
+    width: 2.22vw;
+    height: 2.5814vw;
+
+}
+
+/*Help button: next to "Ayuda"*/
+
+.header .header__help {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    animation: --fadeIn 1s ease 0.1s both;
+    cursor: help;
+}
+
+.header .header__help .header__help--parentcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 2vw;
+    height: 2vw;
+    animation: --shakeBack 0.2s ease-in-out both;
+    overflow: visible;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__help .header__help--parentcontainer .header__help--childcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 100%;
+    animation: --shakeBack 0.2s ease-in-out both;
+    overflow: hidden;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__help .header__help--parentcontainer .header__help--childcontainer .header__help--btn {
+    width: 2vw;
+    height: 2vw;
+    background: url(../../img/question.svg);
+    background-color: #ff6f2c30;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: --zoomOut 0.2s ease both;
+    transition-property: all;
+    transition-duration: 0.2s;
+}
+
+.header .header__help .header__help--parentcontainer .header__help--childcontainer .header__help--btn:hover {
+    animation: --zoomIn 0.2s ease both;
+    background-color: #ffffff;
+}
+
+.header .header__help .header__help--parentcontainer .header__help--childcontainer:hover {
+    animation: --shake 0.000001s ease-in-out both;
+    width: 2.5vw;
+    height: 2.5vw;
+}
+
+.header .header__help .header__help--parentcontainer:hover {
+    height: 2.5vw;
+}
+
+/*Side options container: nut symbol / bell symbol / profile photo*/
+
+.header .header__sideoptions {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 3vw;
+    width: 10vw;
+}
+
+/*Settings: nut symbol*/
+
+.header .header__sideoptions .header__sideoptions--settings {
+    width: 1.2vw;
+    height: 1.2vw;
+    background: url(../../img/nut.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: --rotateBack 0.2s ease both;
+    cursor: pointer;
+}
+
+.header .header__sideoptions .header__sideoptions--settings:hover {
+    animation: --rotate 0.2s ease both;
+}
+
+/*Notifications: bell symbol*/
+
+.header .header__sideoptions .header__sideoptions--notifications {
+    width: 1.2vw;
+    height: 1.2vw;
+    background: url(../../img/bell.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: --shakeBack 0.2s ease-in-out both;
+    cursor: pointer;
+}
+
+.header .header__sideoptions .header__sideoptions--notifications:hover {
+    animation: --shake 0.2s ease-in-out infinite both;
+}
+
+/*Profile options: profile photo*/
+
+.header .header__sideoptions .header__sideoptions--profilecontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 3.7vw;
+    height: 3.7vw;
+    border-radius: 100%;
+    border: 0.2vw dashed #ff6f2c00;
+    transition-property: all;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+.header .header__sideoptions .header__sideoptions--profilecontainer:hover {
+    border: 0.2vw dotted #ff6f2c;
+}
+
+.header .header__sideoptions .header__sideoptions--profilecontainer .header__sideoptions--profile {
+    width: 3vw;
+    height: 3vw;
+}
+
+
+
+
+
+
+.section {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.section .section__container {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: inline-grid;
+}
+
+.section .section__title {
+    margin: calc(4.4vw + 4vh) 0 0;
+    font-size: 2.3vmax;
+    font-family: 'Myriad Pro Regular', sans-serif;
+    text-align: center;
+}
+
+.section .section__description {
+    margin: 1.45vh 0 0;
+    font-size: 1.3vmax;
+    font-family: 'Myriad Pro Light', sans-serif;
+    text-align: center;
+}
+
+.section .section__indicatortitles {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5vh auto 0;
+    width: 88vw;
+    font-size: 1.3vmax; 
+    font-family: 'Myriad Pro Regular', sans-serif;
+    text-align: center;
+}
+
+.section .section__indicatordata {
+    position: relative;
+    margin: 0 auto 0.1vh;
+    width: 90vw;
+    height: 3.2vmax;
+}
+
+.section .section__indicatordata--titles {
+    height: auto;
+}
+
+.section .section__indicator {
+    display: flex;
+    padding-bottom: 0.2vw;
+    width: 88vw;
+    height: 3vw;
+    color: #505050;
+    font-size: 1vmax;
+    font-family: 'Myriad Pro Light', sans-serif;
+    border: 0.1vw solid #a0a0a0;
+    border-radius: 1.5vw;
+}
+
+.section .section__indicator--movecontrol {
+    position: absolute;
+    top: 0.75vw;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    width: 1.5vw;
+    height: 1.875vw;
+}
+
+.section .section__indicator--movecontrol .section__indicator--movecontrolbar {
+    margin: 0.21vw;
+    width: 1.5vw;
+    height: 0.225vw;
+    background-color: #000000;
+}
+
+.section .section__indicator--indicator {
+    margin-left: 1.2%;
+    width: 12%;
+}
+
+.section .--2 {
+    margin-left: 3%;
+}
+
+.section .section__indicator--description {
+    width: 10%;
+    margin-left: 0.8%;
+}
+
+.section .section__indicator--category {
+    width: 3%;
+    margin-left: 2.1%;
+}
+
+.section .section__indicator--startdate {
+    width: 5%;
+    margin-left: 6.4%;
+    text-align: center;
+}
+
+.section .section__indicator--terminationdate {
+    width: 5%;
+    margin-left: 8.9%;
+    text-align: center;
+}
+
+.section .section__indicator--formula {
+    width: 4%;
+    margin-left: 7.8%;
+    text-align: center;
+}
+
+.section .section__indicator--frequency {
+    width: 4%;
+    margin-left: 5.6%;
+    text-align: center;
+}
+
+.section .section__indicator--compliance {
+    position: relative;
+    width: 3.5vw;
+    margin: 0.13vw 0 0 7.43%;
+    text-align: center;
+}
+
+.section .section__indicator--compliance .section__indicator--compliancediagram {
+    fill: #00000000;
+    stroke-width: 0.4vw;
+    transform: rotate(-90deg);
+    transform-origin: 50%;
+    stroke: var(--color);
+    stroke-dasharray: 0 100;
+    stroke-linecap: round;
+    animation-name: --fill;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.section .section__indicator--compliance span {
+    position: absolute;
+    top: 5%;
+    right: 0;
+    bottom: 0;
+    left: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8vw;
+}
+
+.section .section__indicator--area {
+    width: 5vw;
+    margin-left: 5%;
+    text-align: center;
+}
+
+.section .section__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5% auto 0;
+    width: 15vw;
+    height: 3vw;
+    background-color: #ff6f2c;
+    border-radius: 2.5vw;
+    color: #ffffff;
+    font-size: 1.1vmax;
+    font-family: 'Myriad Pro Light', sans-serif;
+    text-decoration: none;
+}
+
+
+
+#header--mobile {
+    display: none;
+}
+
+@media (orientation: portrait) {
+    body {
+        margin: 2vw;
+    }
+
+    .header {
+      display: none;
+    }
+
+    #header--mobile {
+        display: block;
+    }
+
+    .section .section__title {
+        font-size: 5vmax;
+    }
+
+    .section .section__description {
+        font-size: 2vmax;
+    }
+}
+
+

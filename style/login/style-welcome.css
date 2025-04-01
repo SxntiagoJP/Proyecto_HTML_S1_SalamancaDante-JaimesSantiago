@@ -1,0 +1,106 @@
+/*Fonts*/
+
+@font-face {
+    font-family: 'Myriad Pro Light';
+    src: url(../../font/MyriadPro-Light.otf);
+}
+
+@font-face {
+    font-family: 'Myriad Pro Regular';
+    src: url(../../font/MyriadPro-Regular.otf);
+}
+
+/*Animations*/
+
+@keyframes --fadeIn {
+    0% {opacity: 0%;} 100% {opacity: 100%;}
+}
+
+@keyframes --fadeOut {
+    0% {opacity: 100%;} 100% {opacity: 0%;}
+}
+
+body {
+    margin: 0;
+    background: #000000;
+    overflow: hidden;
+}
+
+/*Background image*/
+
+.screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: url(../../img/bg.png);
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*KARIO Media loading logo (without the "Media" text below)*/
+
+.screen .screen__logo {
+    position: absolute;
+    margin: auto;
+    width: 9vmax;
+    height: 9vmax;
+    background: url(../../img/logo.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: /*name ->*/ --fadeIn /*duration ->*/ 0.4s /*timing-function ->*/ ease /*delay ->*/ 4s /*fill-mode ->*/ both;
+}
+
+/*Login container: white rounded square*/
+
+.screen .screen__welcomescreen {
+    display: inline-grid;
+    align-items: center;
+    padding: 0.5vw 5vw 3vw;
+    width: 36%;
+    background-color: #ffffff;
+    border-radius: 3vw;
+    animation: /*name ->*/ --fadeOut /*duration ->*/ 0.4s /*timing-function ->*/ ease /*delay ->*/ 4s /*fill-mode ->*/ both;
+}
+
+/*KARIO Media logo: above title ("Bienvenido de nuevo")*/
+
+.screen .screen__welcomescreen .screen__welcomescreen--logo {
+    width: 4vmax;
+    height: 5vmax;
+    margin: 1vmax auto;
+    background: url(../../img/login-logo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Titles: "Bienvenido de nuevo" / "Pedro Felipe Gómez Bonilla"*/
+
+.screen .screen__welcomescreen .screen__welcomescreen--title {
+    margin: 0;
+    font-size: 2vmax;
+    font-family: 'Myriad Pro Regular', sans-serif;
+    text-align: center;
+}
+
+/*Profile photo*/
+
+.screen .screen__welcomescreen .screen__welcomescreen--profile {
+    width: 6vmax;
+    height: 6vmax;
+    margin: 1vmax auto 0.7vmax;
+    background: url(../../img/profile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Note text: "Usuario Administrador"*/
+
+.screen .screen__welcomescreen .screen__welcomescreen--note {
+    margin: 1.5vmax 0;
+    font-size: 1vmax;
+    font-family: 'Myriad Pro Light', sans-serif;
+    text-align: center;
+}

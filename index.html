@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KARIO Media - Login</title>
-    <link rel="stylesheet" href="./style/style-login.css"/>
+    <link rel="stylesheet" href="./style/login/style-login.css"/>
+    <link rel="icon" type="image/svg" href="./img/logo.svg"/>
 </head>
 <body>
-    
+    <div class="screen">
+        <div class="screen__logo"></div>
+        <div class="screen__loginscreen">
+            <div class="screen__loginscreen--logo"></div>
+            <p class="screen__loginscreen--title">Bienvenido al panel digital de KARIO Media</p>
+            <p class="screen__loginscreen--description">Por favor ingresa los siguientes datos para ingresar a la plataforma</p>
+            <form id="screen__loginscreen--form" action="./html/login/welcome.html" method="">
+                <label for="user">Usuario</label>
+                <input class="screen__loginscreen--input" name="user" type="text" required/>
+                <label for="psw">Contraseña</label>
+                <input class="screen__loginscreen--input" name="psw" type="password" required/>
+                <input class="screen__loginscreen--btn" type="submit" value="Ingresar al panel"/>
+            </form>
+            <p class="screen__loginscreen--note">Tienes problemas para ingresar? Por favor contactarse con asistencia técnica lo más pronto posible</p>
+        </div>
+    </div>
 </body>
 </html>

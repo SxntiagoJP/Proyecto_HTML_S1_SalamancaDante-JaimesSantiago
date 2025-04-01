@@ -1,0 +1,181 @@
+/*Fonts*/
+
+@font-face {
+    font-family: 'Myriad Pro Light';
+    src: url(../../font/MyriadPro-Light.otf);
+}
+
+@font-face {
+    font-family: 'Myriad Pro Regular';
+    src: url(../../font/MyriadPro-Regular.otf);
+}
+
+/*Animations*/
+
+@keyframes --fadeIn {
+    0% {opacity: 0%;} 100% {opacity: 100%;}
+}
+
+@keyframes --fadeOut {
+    0% {opacity: 100%;} 100% {opacity: 0%;}
+}
+
+body {
+    margin: 0;
+    background: #000000;
+    overflow: hidden;
+}
+
+/*Background image*/
+
+.screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: url(../../img/bg.png);
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*KARIO Media loading logo (without the "Media" text below)*/
+
+.screen .screen__logo {
+    position: absolute;
+    margin: auto;
+    width: 9vmax;
+    height: 9vmax;
+    background: url(../../img/logo.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: /*name ->*/ --fadeOut /*duration ->*/ 0.4s /*timing-function ->*/ ease /*delay ->*/ 0.6s /*fill-mode ->*/ both, 
+               /*name ->*/ --fadeIn /*duration ->*/ 0.4s /*timing-function ->*/ ease /*delay ->*/ 1.6s /*fill-mode ->*/ forwards, 
+               /*name ->*/ --fadeOut /*duration ->*/ 0.4s /*timing-function ->*/ ease /*delay ->*/ 2.6s /*fill-mode ->*/ forwards;
+}
+
+/*Login container: white rounded square*/
+
+.screen .screen__loginscreen {
+    display: inline-grid;
+    align-items: center;
+    padding: 0.5vw 3vw 3vw;
+    width: 40%;
+    background-color: #ffffff;
+    border-radius: 3vw;
+    animation-name: --fadeIn;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+    animation-delay: 2.6s;
+    animation-fill-mode: both;
+}
+
+/*KARIO Media logo: above title ("Bienvenido al panel digital de KARIO Media")*/
+
+.screen .screen__loginscreen .screen__loginscreen--logo {
+    width: 4vmax;
+    height: 5vmax;
+    margin: 1vmax auto;
+    background: url(../../img/login-logo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Title: "Bienvenido al panel digital de KARIO Media"*/
+
+.screen .screen__loginscreen .screen__loginscreen--title {
+    margin: 0;
+    font-size: 2vmax;
+    font-family: 'Myriad Pro Regular', sans-serif;
+    text-align: center;
+}
+
+/*Description text: "Por favor ingresa los siguientes datos para ingresar a la plataforma"*/
+
+.screen .screen__loginscreen .screen__loginscreen--description {
+    font-size: 1vmax;
+    font-family: 'Myriad Pro Light', sans-serif;
+    text-align: center;
+}
+
+/*Form: informative texts of text boxes ("Usuario" / "Contraseña") and text boxes (below "Usuario" / "Contraseña") container*/
+
+.screen .screen__loginscreen #screen__loginscreen--form {
+    display: flex;
+    margin: auto;
+    padding-bottom: 2vmax;
+    flex-direction: column;
+}
+
+/*Informative texts of text boxes: "Usuario" / "Contraseña"*/
+
+.screen .screen__loginscreen #screen__loginscreen--form label {
+    margin: 1vmax auto 1vmax 0;
+    font-size: 1.25vmax;
+    font-family: 'Myriad Pro Light', sans-serif;
+    text-align: center;
+}
+
+/*Text boxes: below "Usuario" / "Contraseña"*/
+
+.screen .screen__loginscreen #screen__loginscreen--form .screen__loginscreen--input {
+    box-sizing: content-box;
+    width: 35vw;
+    height: 1.25vmax;
+    padding: 0.4vw;
+    background-color: #f0f0f0;
+    border: 0.01vw solid #707070;
+    border-radius: 0.7vw;
+    color: #303030;
+    font-size: 1vmax;
+    font-family: 'Myriad Pro Light', sans-serif;
+}
+
+.screen .screen__loginscreen #screen__loginscreen--form .screen__loginscreen--input:hover {
+    border: 0.01vw solid #303030;
+}
+
+.screen .screen__loginscreen #screen__loginscreen--form .screen__loginscreen--input:focus {
+    width: 34.76vw;
+    height: 1.1vmax;
+    background-color: #ffffff;
+    border: 0.2vw solid #ff6f2c;
+    outline-width: 0;
+}
+
+/*Button: "Ingresar al panel"*/
+
+.screen .screen__loginscreen .screen__loginscreen--btn {
+    display: flex;
+    width: 15vmax;
+    height: 3vmax;
+    margin: 1.3vmax auto -1vmax;
+    padding: 0.6vmax;
+    color: #ffffff;
+    border: 0;
+    border-radius: 10vmax;
+    outline-width: 0;
+    background-color: #ff6f2c;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1vmax;
+    font-family: 'Myriad Pro Light', sans-serif;
+    cursor: pointer;
+}
+
+/*Button link: "Ingresar al panel"*/
+
+.screen .screen__loginscreen .screen__loginscreen--btn a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/*Note text: "Tienes problemas para ingresar? Por favor contactarse con asistencia técnica lo más pronto posible"*/
+
+.screen .screen__loginscreen .screen__loginscreen--note {
+    margin: 0;
+    font-size: 0.75vmax;
+    font-family: 'Myriad Pro Light', sans-serif;
+    text-align: center;
+}
