@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedro Felipe Gómez Bonilla - Reportar Indicadores</title>
-    <link rel="stylesheet" href="../../style/panel/style-home.css"/>
+    <link rel="stylesheet" href="../../style/panel/style-report.css"/>
     <link rel="icon" type="image/svg" href="../../img/bug.svg"/>
 </head>
 <body>
-    <header>
-        <div class="header">
+    <header class="header">
+        <div class="header__container">
 
             <a class="header__add" href="./add.html" title="Añadir indicadores">
                 <div class="header__add--parentcontainer">
@@ -21,7 +21,7 @@
                 <p class="header__infotext">Añadir</p>
             </a>
 
-            <a class="header__reload" href="./report.html" title="Refrescar la página">
+            <a class="header__reload" href="" title="Refrescar la página">
                 <div class="header__reload--container">
                     <div class="header__reload--btn"></div>
                 </div>
@@ -54,7 +54,7 @@
                 <p class="header__infotext">Reportar</p>
             </a>
 
-            <a class="header__help" href="./help.html" title="Ayuda">
+            <a class="header__help" href="./help/report-help.html" title="Ayuda">
                 <div class="header__help--parentcontainer">
                     <div class="header__help--childcontainer">
                         <div class="header__help--btn"></div>
@@ -68,8 +68,100 @@
 
                 <div class="header__sideoptions--settings" title="Configuración"></div>
                 <div class="header__sideoptions--notifications" title="Notificaciones"></div>
+
                 <div class="header__sideoptions--profilecontainer">
-                    <img class="header__sideoptions--profile" src="../../img/profile.png" alt="Opciones de perfil" title="Opciones de perfil"/>
+                    <a href="#header__sideoptions--target">
+                        <img class="header__sideoptions--profile" src="../../img/profile.png" alt="Opciones de perfil" title="Opciones de perfil"/>
+                    </a>
+                </div>
+
+                <div id="header__sideoptions--target" class="header__transparentbg">
+
+                    <a href="#">
+                        <div class="header__transparentbg"></div>
+                    </a>
+
+                    <div class="header__linkblockbg"></div>
+
+                    <div class="header__sideoptions--useropts">
+                        <div class="header__sideoptions--userdata">
+                            <div class="header__sideoptions--useremail">
+                                <p>pedrogomez.campuslands@gmail.com</p>
+                            </div>
+    
+                            <div class="header__sideoptions--usertelnumber">
+                                <p>+57 302 3019865</p>
+                            </div>
+    
+                            <div class="header__sideoptions--username">
+                                <p>PEDRO FELIPE GÓMEZ BONILLA</p>
+                            </div>
+                        </div>
+    
+                        <div class="header__sideoptions--useropt">
+                            <div class="header__sideoptions--infotext">
+                                <p>Ver perfil</p>
+                            </div>
+    
+                            <div class="header__sideoptions--userseeprofile-icon header__sideoptions--icon"></div>
+                        </div>
+    
+                        <div class="header__sideoptions--useropt">
+                            <div class="header__sideoptions--infotext">
+                                <p>Opciones de seguridad</p>
+                            </div>
+    
+                            <div class="header__sideoptions--usersecurityoptions-icon header__sideoptions--icon"></div>
+                        </div>
+    
+                        <div class="header__sideoptions--useropt">
+                            <div class="header__sideoptions--infotext">
+                                <p>Configuración</p>
+                            </div>
+    
+                            <div class="header__sideoptions--usersettings-icon header__sideoptions--icon"></div>
+                        </div>
+    
+                        <div class="header__sideoptions--useropt">
+                            <div class="header__sideoptions--infotext">
+                                <p>Notificaciones</p>
+                            </div>
+    
+                            <div class="header__sideoptions--usernotifications-icon header__sideoptions--icon"></div>
+                        </div>
+    
+                        <div class="header__sideoptions--useropt">
+                            <div class="header__sideoptions--infotext">
+                                <p>Ayuda</p>
+                            </div>
+    
+                            <div class="header__sideoptions--userhelp-icon header__sideoptions--icon"></div>
+                        </div>
+    
+                        <div class="header__sideoptions--useropt">
+                            <div class="header__sideoptions--infotext">
+                                <p>Tema</p>
+                            </div>
+    
+                            <div class="header__sideoptions--usertheme-icon header__sideoptions--icon"></div>
+                        </div>
+    
+                        <div class="header__sideoptions--useropt">
+                            <div class="header__sideoptions--infotext">
+                                <p>Idioma</p>
+                            </div>
+    
+                            <div class="header__sideoptions--userlanguage-icon header__sideoptions--icon"></div>
+                        </div>
+
+                        <a class="header__sideoptions--useropt" href="../../index.html">
+                            <div class="header__sideoptions--infotext">
+                                <p>Cerrar sesión</p>
+                            </div>
+    
+                            <div class="header__sideoptions--userlogout-icon header__sideoptions--icon"></div>
+                        </a>
+                    </div>
                 </div>
 
             </div>
@@ -77,5 +169,686 @@
         </div>
     </header>
 
+    <section class="section">
+
+        <div class="section__container">
+
+            <p class="section__title">Panel de Indicadores</p>
+            <p class="section__description">Aquí puedes visualizar los indicadores propuestos y añadidos por tu equipo de trabajo.</p>
+    
+            <div class="section__indicatordata section__indicatordata--titles">
+                <div class="section__indicatortitles">
+                    <div class="section__indicatortitle section__indicatortitle--indicator">Indicador</div>
+                    <div class="section__indicatortitle section__indicatortitle--description">Descripción</div>
+                    <div class="section__indicatortitle section__indicatortitle--category">Categoría</div>
+                    <div class="section__indicatortitle section__indicatortitle--startdate">Fecha de Inicio</div>
+                    <div class="section__indicatortitle section__indicatortitle--terminationdate">Fecha de Terminación</div>
+                    <div class="section__indicatortitle section__indicatortitle--formula">Fórmula</div>
+                    <div class="section__indicatortitle section__indicatortitle--frequency">Frecuencia</div>
+                    <div class="section__indicatortitle section__indicatortitle--compliance">Cumplimiento</div>
+                    <div class="section__indicatortitle section__indicatortitle--area">Área</div>
+                    <div class="section__indicatorspace"></div>
+                </div>
+            </div>
+    
+    
+    
+            <div class="section__indicatordata">
+                <div class="section__indicator">
+                    <p class="section__indicator--indicator">Modelado 3D</p>
+                    <p class="section__indicator--description">Interés por dise.........</p>
+                    <p class="section__indicator--category">Baja</p>
+                    <p class="section__indicator--startdate">12/05/21</p>
+                    <p class="section__indicator--terminationdate">12/12/21</p>
+                    <p class="section__indicator--formula">Met.Ágil</p>
+                    <p class="section__indicator--frequency">1/4</p>
+                    <div class="section__indicator--compliance" style="--percentage: 31; --color: #ff0011;">
+    
+                        <svg width="3vw" height="3vw">
+                            <circle class="section__indicator--compliancediagram" r="1.1vw" cx="50%" cy="50%" pathlength="100"/>
+                        </svg>
+    
+                        <span>31%</span>
+    
+                    </div>
+                    <p class="section__indicator--area">Marketing</p>
+                </div>
+    
+                <div class="section__indicator--checkboxcontainer">
+                    <input class="section__indicator--checkbox" type="checkbox"/>
+                </div>
+            </div>
+    
+            <div class="section__indicatordata">
+                <div class="section__indicator">
+                    <p class="section__indicator--indicator">Finca Galeón</p>
+                    <p class="section__indicator--description">Diseño de maque.......</p>
+                    <p class="section__indicator--category">Baja</p>
+                    <p class="section__indicator--startdate">12/04/21</p>
+                    <p class="section__indicator--terminationdate">12/05/21</p>
+                    <p class="section__indicator--formula">Met.Ágil</p>
+                    <p class="section__indicator--frequency">1/4</p>
+                    <div class="section__indicator--compliance" style="--percentage: 25; --color: #ff0011;">
+    
+                        <svg width="3vw" height="3vw">
+                            <circle class="section__indicator--compliancediagram" r="1.1vw" cx="50%" cy="50%" pathlength="100"/>
+                        </svg>
+    
+                        <span>25%</span>
+    
+                    </div>
+                    <p class="section__indicator--area">Diseño</p>
+                </div>
+    
+                <div class="section__indicator--checkboxcontainer">
+                    <input class="section__indicator--checkbox" type="checkbox"/>
+                </div>
+            </div>
+    
+            <div class="section__indicatordata">
+                <div class="section__indicator">
+                    <p class="section__indicator--indicator">Colegios Privados</p>
+                    <p class="section__indicator--description">Se busca llegar a los....</p>
+                    <p class="section__indicator--category">Media</p>
+                    <p class="section__indicator--startdate">24/04/21</p>
+                    <p class="section__indicator--terminationdate">12/11/21</p>
+                    <p class="section__indicator--formula">Met.Fibo</p>
+                    <p class="section__indicator--frequency">1/4</p>
+                    <div class="section__indicator--compliance" style="--percentage: 80; --color: #00d010;">
+    
+                        <svg width="3vw" height="3vw">
+                            <circle class="section__indicator--compliancediagram" r="1.1vw" cx="50%" cy="50%" pathlength="100"/>
+                        </svg>
+    
+                        <span>80%</span>
+    
+                    </div>
+                    <p class="section__indicator--area">Developers</p>
+                </div>
+    
+                <div class="section__indicator--checkboxcontainer">
+                    <input class="section__indicator--checkbox" type="checkbox"/>
+                </div>
+            </div>
+    
+            <div class="section__indicatordata">
+                <div class="section__indicator">
+                    <p class="section__indicator--indicator">Electrodomésticos</p>
+                    <p class="section__indicator--description">Ventas de electro......</p>
+                    <p class="section__indicator--category">Media</p>
+                    <p class="section__indicator--startdate">12/04/21</p>
+                    <p class="section__indicator--terminationdate">12/09/21</p>
+                    <p class="section__indicator--formula">N/A</p>
+                    <p class="section__indicator--frequency">1/3</p>
+                    <div class="section__indicator--compliance" style="--percentage: 32; --color: #ff0011;">
+    
+                        <svg width="3vw" height="3vw">
+                            <circle class="section__indicator--compliancediagram" r="1.1vw" cx="50%" cy="50%" pathlength="100"/>
+                        </svg>
+    
+                        <span>32%</span>
+    
+                    </div>
+                    <p class="section__indicator--area">Gerencia</p>
+                </div>
+    
+                <div class="section__indicator--checkboxcontainer">
+                    <input class="section__indicator--checkbox" type="checkbox"/>
+                </div>
+            </div>
+    
+            <div class="section__indicatordata">
+                <div class="section__indicator">
+                    <p class="section__indicator--indicator">Estrato 2 - Floridablanca</p>
+                    <p class="section__indicator--description">Impacto en los sec.....</p>
+                    <p class="section__indicator--category">Alta</p>
+                    <p class="section__indicator--startdate">12/04/21</p>
+                    <p class="section__indicator--terminationdate">12/09/21</p>
+                    <p class="section__indicator--formula">Met.Expo</p>
+                    <p class="section__indicator--frequency">1/4</p>
+                    <div class="section__indicator--compliance" style="--percentage: 95; --color: #00d010;">
+    
+                        <svg width="3vw" height="3vw">
+                            <circle class="section__indicator--compliancediagram" r="1.1vw" cx="50%" cy="50%" pathlength="100"/>
+                        </svg>
+    
+                        <span>95%</span>
+    
+                    </div>
+                    <p class="section__indicator--area">Marketing</p>
+                </div>
+    
+                <div class="section__indicator--checkboxcontainer">
+                    <input class="section__indicator--checkbox" type="checkbox"/>
+                </div>
+            </div>
+    
+            <div class="section__indicatordata">
+                <div class="section__indicator">
+                    <p class="section__indicator--indicator">Jóvenes en Acción</p>
+                    <p class="section__indicator--description">Impacto en los sec.....</p>
+                    <p class="section__indicator--category">Alta</p>
+                    <p class="section__indicator--startdate">15/02/21</p>
+                    <p class="section__indicator--terminationdate">09/11/21</p>
+                    <p class="section__indicator--formula">Met.Expo</p>
+                    <p class="section__indicator--frequency">1/2</p>
+                    <div class="section__indicator--compliance" style="--percentage: 75; --color: #ff9f05;">
+    
+                        <svg width="3vw" height="3vw">
+                            <circle class="section__indicator--compliancediagram" r="1.1vw" cx="50%" cy="50%" pathlength="100"/>
+                        </svg>
+    
+                        <span>75%</span>
+    
+                    </div>
+                    <p class="section__indicator--area">Producción</p>
+                </div>
+    
+                <div class="section__indicator--checkboxcontainer">
+                    <input class="section__indicator--checkbox" type="checkbox"/>
+                </div>
+            </div>
+    
+            <a class="section__btn" href="">
+                <p href="">Reportar Seleccionados</p>
+            </a>
+
+        </div>
+
+    </section>
+
+    <header class="header--mobile">
+        <div class="header--mobile__container">
+
+            <div class="header--mobile__menubtncontainer">
+                <div class="header--mobile__menubtn"></div>
+            </div>
+
+            <a class="header--mobile__link" href="./home.html" title="Ir al panel principal">
+                <div class="header--mobile__home--btn header--mobile__btn"></div>
+                <p class="header--mobile__infotext">Panel principal</p>
+            </a>
+
+            <a class="header--mobile__link" href="./add.html" title="Añadir indicadores">
+                <div class="header--mobile__add--btn header--mobile__btn"></div>
+                <p class="header--mobile__infotext">Añadir</p>
+            </a>
+
+            <a class="header--mobile__link" href="./home.html" title="Refrescar la página">
+                <div class="header--mobile__reload--btn header--mobile__btn"></div>
+                <p class="header--mobile__infotext">Refrescar</p>
+            </a>
+
+            <a class="header--mobile__link" href="./delete.html" title="Eliminar indicadores">
+                <div class="header--mobile__delete--btn header--mobile__btn"></div>
+                <p class="header--mobile__infotext">Eliminar</p>
+            </a>
+
+            <a class="header--mobile__link" href="./report.html" title="Reportar indicadores">
+                <div class="header--mobile__report--btn header--mobile__btn"></div>
+                <p class="header--mobile__infotext">Reportar</p>
+            </a>
+
+            <a class="header--mobile__link" href="./help/report-help.html" title="Ayuda">
+                <div class="header--mobile__help--btn header--mobile__btn"></div>
+                <p class="header--mobile__infotext">Ayuda</p>
+            </a>
+
+            <div class="header--mobile__useropts">
+                <a class="header--mobile__useroptstitle" title="Opciones de usuario">
+                    <div class="header--mobile__profile--img"></div>
+                    <p class="header--mobile__infotext header--mobile__usertitle">Opciones de usuario</p>
+                </a>
+
+                <a class="header--mobile__link" title="Ver perfil">
+                    <div class="header--mobile__seeprofile--btn header--mobile__btn"></div>
+                    <p class="header--mobile__infotext header--mobile__useropt">Ver perfil</p>
+                </a>
+
+                <a class="header--mobile__link" title="Opciones de seguridad">
+                    <div class="header--mobile__securityoptions--btn header--mobile__btn"></div>
+                    <p class="header--mobile__infotext header--mobile__useropt">Opciones de seguridad</p>
+                </a>
+
+                <a class="header--mobile__link" title="Configuración">
+                    <div class="header--mobile__settings--btn header--mobile__btn"></div>
+                    <p class="header--mobile__infotext header--mobile__useropt">Configuración</p>
+                </a>
+
+                <a class="header--mobile__link" title="Notificaciones">
+                    <div class="header--mobile__notifications--btn header--mobile__btn"></div>
+                    <p class="header--mobile__infotext header--mobile__useropt">Notificaciones</p>
+                </a>
+
+                <a class="header--mobile__link" href="../../index.html" title="Cerrar sesión">
+                    <div class="header--mobile__logout--btn header--mobile__btn"></div>
+                    <p class="header--mobile__infotext header--mobile__useropt">Cerrar sesión</p>
+                </a>
+
+                <div class="header--mobile__decorationline"></div>
+
+                <a class="header--mobile__link" title="Tema">
+                    <div class="header--mobile__theme--btn header--mobile__btn"></div>
+                    <p class="header--mobile__infotext header--mobile__useropt">Tema</p>
+                </a>
+
+                <a class="header--mobile__link" title="Idioma">
+                    <div class="header--mobile__language--btn header--mobile__btn"></div>
+                    <p class="header--mobile__infotext header--mobile__useropt">Idioma</p>
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <section>
+        <div class="section--mobile">
+            <div class="section--mobile__container">
+                <p class="section--mobile__title">Panel de Indicadores</p>
+                <p class="section--mobile__description">Aquí puedes visualizar los indicadores propuestos y añadidos por tu equipo de trabajo.</p>
+
+                <div class="section--mobile__indicatordata">
+
+                    <div class="section--mobile__indicatorcontent--indicator-content">
+                        <div class="section--mobile__indicator">
+                            <p>Modelado 3D</p>
+                        </div>
+    
+                        <div class="section--mobile__indicatorcontent">
+    
+                            <div class="section--mobile__indicator--description section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Descripción</p>
+                                <p class="section--mobile__indicator--content">Interés por diseño y modelado tridimensional en proyectos de desarrollo, evaluando la aplicabilidad y eficiencia en entornos digitales y físicos dentro del área de marketing.</p>
+                            </div>
+    
+                            <div class="section--mobile__indicator--category section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Categoría</p>
+                                <p class="section--mobile__indicator--content">Baja</p>
+                            </div>
+    
+                            <div class="section--mobile__indicator--startdate section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Fecha de Inicio</p>
+                                <p class="section--mobile__indicator--content">12/05/21</p>
+                            </div>
+    
+                            <div class="section--mobile__indicator--terminationdate section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Fecha de Terminación</p>
+                                <p class="section--mobile__indicator--content">12/12/21</p>
+                            </div>
+    
+                            <div class="section--mobile__indicator--formula section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Fórmula</p>
+                                <p class="section--mobile__indicator--content">Met.Ágil</p>
+                            </div>
+    
+                            <div class="section--mobile__indicator--frequency section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Frecuencia</p>
+                                <p class="section--mobile__indicator--content">1/4</p>
+                            </div>
+    
+                            <div class="section--mobile__indicator--compliance section--mobile__indicator--item" style="--percentage: 31; --color: #ff0011;">
+    
+                                <p class="section--mobile__indicator--title">Cumplimiento</p>
+    
+                                <svg width="13vw" height="13vw">
+                                    <circle class="section--mobile__indicator--compliancediagram" r="5vw" cx="50%" cy="50%" pathlength="100"/>
+                                </svg>
+            
+                                <span>31%</span>
+            
+                            </div>
+    
+                            <div class="section--mobile__indicator--area section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Área</p>
+                                <p class="section--mobile__indicator--content">Marketing</p>
+                            </div>
+
+                            <div class="section--mobile__indicatorcontent--btn"></div>
+    
+                        </div>
+                    </div>
+
+                    <div class="section--mobile__indicator--checkboxcontainer">
+                        <input class="section--mobile__indicator--checkbox" type="checkbox"/>
+                    </div>
+                </div>
+
+                <div class="section--mobile__indicatordata">
+
+                    <div class="section--mobile__indicatorcontent--indicator-content">
+
+                        <div class="section--mobile__indicator">
+                            <p>Finca Galeón</p>
+                        </div>
+
+                        <div class="section--mobile__indicatorcontent">
+                            <div class="section--mobile__indicator--description section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Descripción</p>
+                                <p class="section--mobile__indicator--content">Diseño de maquetas y prototipos arquitectónicos para evaluar la viabilidad y presentación de proyectos en el área de diseño.</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--category section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Categoría</p>
+                                <p class="section--mobile__indicator--content">Baja</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--startdate section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Fecha de Inicio</p>
+                                <p class="section--mobile__indicator--content">12/04/21</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--terminationdate section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Fecha de Terminación</p>
+                                <p class="section--mobile__indicator--content">12/05/21</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--formula section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Fórmula</p>
+                                <p class="section--mobile__indicator--content">Met.Ágil</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--frequency section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Frecuencia</p>
+                                <p class="section--mobile__indicator--content">1/4</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--compliance section--mobile__indicator--item" style="--percentage: 25; --color: #ff0011;">
+
+                                <p class="section--mobile__indicator--title">Cumplimiento</p>
+
+                                <svg width="13vw" height="13vw">
+                                    <circle class="section--mobile__indicator--compliancediagram" r="5vw" cx="50%" cy="50%" pathlength="100"/>
+                                </svg>
+                            
+                                <span>25%</span>
+                            
+                            </div>
+
+                            <div class="section--mobile__indicator--area section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Área</p>
+                                <p class="section--mobile__indicator--content">Diseño</p>
+                            </div>
+
+                            <div class="section--mobile__indicatorcontent--btn"></div>
+
+                        </div>
+                    </div>
+
+                    <div class="section--mobile__indicator--checkboxcontainer">
+                        <input class="section--mobile__indicator--checkbox" type="checkbox"/>
+                    </div>
+                </div>
+
+                <div class="section--mobile__indicatordata">
+
+                    <div class="section--mobile__indicatorcontent--indicator-content">
+                    
+                        <div class="section--mobile__indicator">
+                            <p>Colegios Privados</p>
+                        </div>
+
+                        <div class="section--mobile__indicatorcontent">
+                            <div class="section--mobile__indicator--description section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Descripción</p>
+                                <p class="section--mobile__indicator--content">Se busca llegar a los principales colegios privados para ofrecer propuestas de valor en infraestructura, tecnología y servicios educativos, fortaleciendo la relación con el sector académico.</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--category section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Categoría</p>
+                                <p class="section--mobile__indicator--content">Media</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--startdate section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Fecha de Inicio</p>
+                                <p class="section--mobile__indicator--content">24/04/21</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--terminationdate section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Fecha de Terminación</p>
+                                <p class="section--mobile__indicator--content">12/11/21</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--formula section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Fórmula</p>
+                                <p class="section--mobile__indicator--content">Met.Fibo</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--frequency section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Frecuencia</p>
+                                <p class="section--mobile__indicator--content">1/4</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--compliance section--mobile__indicator--item" style="--percentage: 80; --color: #00d010;">
+
+                                <p class="section--mobile__indicator--title">Cumplimiento</p>
+
+                                <svg width="13vw" height="13vw">
+                                    <circle class="section--mobile__indicator--compliancediagram" r="5vw" cx="50%" cy="50%" pathlength="100"/>
+                                </svg>
+                            
+                                <span>80%</span>
+                            
+                            </div>
+
+                            <div class="section--mobile__indicator--area section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Área</p>
+                                <p class="section--mobile__indicator--content">Developers</p>
+                            </div>
+
+                            <div class="section--mobile__indicatorcontent--btn"></div>
+
+                        </div>
+                    </div>
+
+                    <div class="section--mobile__indicator--checkboxcontainer">
+                        <input class="section--mobile__indicator--checkbox" type="checkbox"/>
+                    </div>
+                </div>
+
+                <div class="section--mobile__indicatordata">
+
+                    <div class="section--mobile__indicatorcontent--indicator-content">
+
+                        <div class="section--mobile__indicator">
+                            <p>Electrodomésticos</p>
+                        </div>
+
+                        <div class="section--mobile__indicatorcontent">
+                            <div class="section--mobile__indicator--description section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Descripción</p>
+                                <p class="section--mobile__indicator--content">Ventas de electrodomésticos enfocadas en la optimización de estrategias comerciales y expansión del mercado, asegurando un crecimiento sostenible en el sector.</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--category section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Categoría</p>
+                                <p class="section--mobile__indicator--content">Media</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--startdate section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Fecha de Inicio</p>
+                                <p class="section--mobile__indicator--content">12/04/21</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--terminationdate section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Fecha de Terminación</p>
+                                <p class="section--mobile__indicator--content">12/09/21</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--formula section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Fórmula</p>
+                                <p class="section--mobile__indicator--content">N/A</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--frequency section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Frecuencia</p>
+                                <p class="section--mobile__indicator--content">1/3</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--compliance section--mobile__indicator--item" style="--percentage: 32; --color: #ff0011;">
+
+                                <p class="section--mobile__indicator--title">Cumplimiento</p>
+
+                                <svg width="13vw" height="13vw">
+                                    <circle class="section--mobile__indicator--compliancediagram" r="5vw" cx="50%" cy="50%" pathlength="100"/>
+                                </svg>
+                            
+                                <span>32%</span>
+                            
+                            </div>
+
+                            <div class="section--mobile__indicator--area section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Área</p>
+                                <p class="section--mobile__indicator--content">Gerencia</p>
+                            </div>
+
+                            <div class="section--mobile__indicatorcontent--btn"></div>
+
+                        </div>
+                    </div>
+
+                    <div class="section--mobile__indicator--checkboxcontainer">
+                        <input class="section--mobile__indicator--checkbox" type="checkbox"/>
+                    </div>
+                </div>
+
+                <div class="section--mobile__indicatordata">
+
+                    <div class="section--mobile__indicatorcontent--indicator-content">
+
+                        <div class="section--mobile__indicator">
+                            <p>Estrato 2 - Floridablanca</p>
+                        </div>
+
+                        <div class="section--mobile__indicatorcontent">
+                            <div class="section--mobile__indicator--description section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Descripción</p>
+                                <p class="section--mobile__indicator--content">Impacto en los sectores de Estrato 2 en Floridablanca, analizando el desarrollo social y económico a través de proyectos e inversiones estratégicas.</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--category section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Categoría</p>
+                                <p class="section--mobile__indicator--content">Alta</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--startdate section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Fecha de Inicio</p>
+                                <p class="section--mobile__indicator--content">12/04/21</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--terminationdate section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Fecha de Terminación</p>
+                                <p class="section--mobile__indicator--content">12/09/21</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--formula section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Fórmula</p>
+                                <p class="section--mobile__indicator--content">Met.Expo</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--frequency section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Frecuencia</p>
+                                <p class="section--mobile__indicator--content">1/4</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--compliance section--mobile__indicator--item" style="--percentage: 95; --color: #00d010;">
+
+                                <p class="section--mobile__indicator--title">Cumplimiento</p>
+
+                                <svg width="13vw" height="13vw">
+                                    <circle class="section--mobile__indicator--compliancediagram" r="5vw" cx="50%" cy="50%" pathlength="100"/>
+                                </svg>
+                            
+                                <span>95%</span>
+                            
+                            </div>
+
+                            <div class="section--mobile__indicator--area section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Área</p>
+                                <p class="section--mobile__indicator--content">Marketing</p>
+                            </div>
+
+                            <div class="section--mobile__indicatorcontent--btn"></div>
+
+                        </div>
+                    </div>
+
+                    <div class="section--mobile__indicator--checkboxcontainer">
+                        <input class="section--mobile__indicator--checkbox" type="checkbox"/>
+                    </div>
+                </div>
+
+                <div class="section--mobile__indicatordata">
+
+                    <div class="section--mobile__indicatorcontent--indicator-content">
+                    
+                        <div class="section--mobile__indicator">
+                            <p>Jóvenes en Acción</p>
+                        </div>
+
+                        <div class="section--mobile__indicatorcontent">
+                            <div class="section--mobile__indicator--description section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Descripción</p>
+                                <p class="section--mobile__indicator--content">Impacto en los sectores juveniles a través del programa Jóvenes en Acción, promoviendo oportunidades de educación, empleo y desarrollo social.</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--category section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Categoría</p>
+                                <p class="section--mobile__indicator--content">Alta</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--startdate section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Fecha de Inicio</p>
+                                <p class="section--mobile__indicator--content">15/02/21</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--terminationdate section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Fecha de Terminación</p>
+                                <p class="section--mobile__indicator--content">09/11/21</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--formula section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Fórmula</p>
+                                <p class="section--mobile__indicator--content">Met.Expo</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--frequency section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Frecuencia</p>
+                                <p class="section--mobile__indicator--content">1/2</p>
+                            </div>
+
+                            <div class="section--mobile__indicator--compliance section--mobile__indicator--item" style="--percentage: 75; --color: #ff9f05;">
+
+                                <p class="section--mobile__indicator--title">Cumplimiento</p>
+
+                                <svg width="13vw" height="13vw">
+                                    <circle class="section--mobile__indicator--compliancediagram" r="5vw" cx="50%" cy="50%" pathlength="100"/>
+                                </svg>
+                            
+                                <span>75%</span>
+                            
+                            </div>
+
+                            <div class="section--mobile__indicator--area section--mobile__indicator--item">
+                                <p class="section--mobile__indicator--title">Área</p>
+                                <p class="section--mobile__indicator--content">Producción</p>
+                            </div>
+
+                            <div class="section--mobile__indicatorcontent--btn"></div>
+
+                        </div>
+                    </div>
+
+                    <div class="section--mobile__indicator--checkboxcontainer">
+                        <input class="section--mobile__indicator--checkbox" type="checkbox"/>
+                    </div>
+                </div>
+
+                <a class="section--mobile__btn" href="">
+                    <p href="">Reportar Seleccionados</p>
+                </a>
+
+            </div>
+        </div>
+    </section>
 </body>
 </html>

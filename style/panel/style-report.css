@@ -1,0 +1,1409 @@
+/*Fonts*/
+
+@font-face {
+    font-family: 'Myriad Pro Light';
+    src: url(../../font/MyriadPro-Light.otf);
+}
+
+@font-face {
+    font-family: 'Myriad Pro Regular';
+    src: url(../../font/MyriadPro-Regular.otf);
+}
+
+@font-face {
+    font-family: 'Myriad Pro Semibold';
+    src: url(../../font/MyriadPro-Semibold.otf);
+}
+
+@font-face {
+    font-family: 'Myriad Pro Bold';
+    src: url(../../font/MyriadPro-Bold.otf);
+}
+
+/*ANIMATIONS*/
+
+/*Delete animations*/
+
+@keyframes --close {
+    0% {rotate: -12deg; margin-left: -0.1vw; margin-top: -0.2vw; margin-bottom: 0.2vw;}
+    100% {rotate: 0deg; margin-left: 0; margin-top: 0; margin-bottom: 0;}    
+}
+
+@keyframes --open {
+    0% {rotate: 0deg; margin-left: 0; margin-top: 0; margin-bottom: 0;}
+    100% {rotate: -12deg; margin-left: -0.1vw; margin-top: -0.2vw; margin-bottom: 0.2vw;}    
+}
+
+/*Fade animations*/
+
+@keyframes --fadeIn {
+    0% {opacity: 0%;} 100% {opacity: 100%;}    
+}
+
+/*Diagram animations*/
+
+@keyframes --fill {
+    to {stroke-dasharray: var(--percentage) 100;}    
+}
+
+/*Rotate animations*/
+
+@keyframes --rotate {
+    0% {rotate: 0deg;} 100% {rotate: 90deg;} 
+}
+
+@keyframes --rotateBack {
+    0% {rotate: 90deg;} 100% {rotate: 0deg;} 
+}
+
+/*Shake animations*/
+
+@keyframes --shake {
+    0% {rotate: 0deg;} 25% {rotate: 10deg;}
+    50% {rotate: 0;} 75% {rotate: -10deg} 100% {rotate: 0;}
+}
+
+@keyframes --shakeBack {
+    0% {rotate: 0deg;} 25% {rotate: -10deg;}
+    50% {rotate: 0;} 75% {rotate: 10deg} 100% {rotate: 0;}
+}
+
+/*Logo animations*/
+
+@keyframes --turn {
+    0% {transform: scaleX(1);} 100% {transform: scaleX(-1);} 
+}
+
+@keyframes --turnBack {
+    0% {transform: scaleX(-1);} 100% {transform: scaleX(1);} 
+}
+
+/*Report animations*/
+
+@keyframes --walkBackwards {
+    0% {margin-top: 0;} 25% {margin-top: 0.6vw;}
+    50% {margin-top: 0;} 75% {margin-top: -0.6vw} 100% {margin-top: 0;}
+}
+
+@keyframes --walkForwards {
+    0% {margin-top: 0;} 25% {margin-top: -0.6vw;}
+    50% {margin-top: 0;} 75% {margin-top: 0.6vw} 100% {margin-top: 0;}
+}
+
+/*Zoom animations*/
+
+@keyframes --zoomIn {
+    0% {width: 2vw; height: 2vw;} 100% {width: 3vw; height: 3vw;}
+}
+
+@keyframes --zoomOut {
+    0% {width: 3vw; height: 3vw;} 100% {width: 2vw; height: 2vw;}
+}
+
+body::-webkit-scrollbar {
+    width: 0.3vw;
+    background-color: #00000000;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #ff6f2c;
+    border-radius: 10vw;
+}
+
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    overflow: hidden;
+}
+
+/*Header container*/
+
+.header {
+    z-index: 1;
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    height: 4.4vw;
+    background-color: #ffffff;
+}
+
+.header .header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 4.4vw;
+    border-bottom: 1px solid #a0a0a0;
+}
+
+/*Button information texts: "Añadir" / "Refrescar" / "Eliminar" / "Reportar" / "Ayuda"*/
+
+.header .header__container .header__infotext {
+    margin-left: 0.5vw;
+    color: #000000;
+    font-size: 1.2vw;
+    font-family: 'Myriad Pro Semibold', sans-serif;
+}
+
+/*Add button: next to "Añadir"*/
+
+.header .header__container .header__add {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 11vw;
+    text-decoration: none;
+    animation: --fadeIn 1s ease 0.1s both;
+}
+
+.header .header__container .header__add .header__add--parentcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 2vw;
+    height: 2vw;
+    overflow: visible;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__container .header__add .header__add--parentcontainer .header__add--childcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 100%;
+    animation: --shakeBack 0.2s ease-in-out both;
+    overflow: hidden;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__container .header__add .header__add--parentcontainer .header__add--childcontainer .header__add--btn {
+    width: 2vw;
+    height: 2vw;
+    background: url(../../img/plus.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: --zoomOut 0.2s ease both;
+}
+
+.header .header__container .header__add .header__add--parentcontainer .header__add--childcontainer .header__add--btn:hover {
+    animation: --zoomIn 0.2s ease both;
+}
+
+.header .header__container .header__add .header__add--parentcontainer .header__add--childcontainer:hover {
+    animation: --shake 0.000001s ease-in-out both;
+    width: 2.5vw;
+    height: 2.5vw;
+}
+
+.header .header__container .header__add .header__add--parentcontainer:hover {
+    height: 2.5vw;
+}
+
+/*Reload button: next to "Refrescar"*/
+
+.header .header__container .header__reload {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    animation: --fadeIn 1s ease 0.1s both;
+}
+
+.header .header__container .header__reload .header__reload--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1.7666vw;
+    height: 1.7666vw;
+    overflow: visible;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__container .header__reload .header__reload--container .header__reload--btn {
+    width: 1.7666vw;
+    height: 1.7666vw;
+    background: url(../../img/reload.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: --rotateBack 0.2s ease both;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__container .header__reload .header__reload--container:hover > .header__reload--btn {
+    animation: --rotate 0.2s ease both;
+    width: 2.2666vw;
+    height: 2.2666vw;
+}
+
+.header .header__container .header__reload .header__reload--container:hover {
+    height: 2.2666vw;
+}
+
+/*Delete button: next to "Eliminar"*/
+
+.header .header__container .header__delete {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    animation: --fadeIn 1s ease 0.1s both;
+}
+
+.header .header__container .header__delete .header__delete--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1.5666vw;
+    height: 1.9999vw;
+    animation: --shakeBack 0.2s ease-in-out both;
+    overflow: visible;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__container .header__delete .header__delete--container .header__delete--btntop {
+    margin: 0;
+    background: url(../../img/trash.svg);
+    width: 1.5666vw;
+    height: 0.4333vw;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: --close 0.2s ease both;
+    transition-property: all;
+    transition-duration: 0.5s;    
+}
+
+.header .header__container .header__delete .header__delete--container .header__delete--btncontainer {
+    margin: 0;
+    background: url(../../img/trash.svg);
+    width: 1.5666vw;
+    height: 1.5666vw;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__container .header__delete .header__delete--container:hover > .header__delete--btntop {
+    animation: --open 0.2s ease both;
+    width: 2.0666vw;
+    height: 0.5716vw;
+}
+
+.header .header__container .header__delete .header__delete--container:hover {
+    animation: --shake 0.000001s ease-in-out both;
+    height: 2.6382vw;
+}
+
+.header .header__container .header__delete .header__delete--container:hover > .header__delete--btncontainer {
+    width: 2.0666vw;
+    height: 2.0666vw;
+}
+
+/*Logo button*/
+
+.header .header__container .header__home {
+    margin: auto 6vw auto 0;
+}
+
+.header .header__container .header__home .header__home--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 2.313vw;
+    height: 2.313vw;
+    animation: --fadeIn 1s ease 0.1s both;
+    overflow: visible;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__container .header__home .header__home--container .header__home--btn {
+    width: 2.313vw;
+    height: 2.313vw;
+    animation: --turnBack 0.2s ease both;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__container .header__home .header__home--container:hover > .header__home--btn {
+    animation: --turn 0.2s ease both;
+    width: 2.813vw;
+    height: 2.813vw;
+}
+
+.header .header__container .header__home .header__home--container:hover {
+    height: 2.813vw;
+}
+
+/*Report button: next to "Reportar"*/
+
+.header .header__container .header__report {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    animation: --fadeIn 1s ease 0.1s both;
+}
+
+.header .header__container .header__report .header__report--container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: -0.0666vw;
+    width: 1.72vw;
+    height: 2vw;
+    animation: --shakeBack 0.2s ease-in-out both;
+    overflow: visible;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__container .header__report .header__report--container .header__report--btnL {
+    width: 0.26vw;
+    height: 2vw;
+    margin: 0;
+    background: url(../../img/bug.svg);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: --walkBackwards 0.2s ease-in-out both;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__container .header__report .header__report--container .header__delete--btnbody {
+    width: 1.2vw;
+    height: 2vw;
+    margin: 0;
+    background: url(../../img/bug.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__container .header__report .header__report--container .header__delete--btnR {
+    width: 0.26vw;
+    height: 2vw;
+    margin: 0;
+    background: url(../../img/bug.svg);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: --walkForwards 0.2s ease-in-out both;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__container .header__report .header__report--container:hover > .header__report--btnL {
+    animation: --walkForwards 0.4s ease-in-out infinite both;
+    width: 0.3vw;
+    height: 2.5814vw;
+}
+
+.header .header__container .header__report .header__report--container:hover > .header__delete--btnR {
+    animation: --walkBackwards 0.4s ease-in-out infinite both;
+    width: 0.3vw;
+    height: 2.5814vw;
+}
+
+.header .header__container .header__report .header__report--container:hover > .header__delete--btnbody {
+    width: 1.5488vw;
+    height: 2.5814vw;
+}
+
+.header .header__container .header__report .header__report--container:hover {
+    animation: --shake 0.4s ease-in-out infinite both;
+    margin: -0.31vw;
+    width: 2.22vw;
+    height: 2.5814vw;
+
+}
+
+/*Help button: next to "Ayuda"*/
+
+.header .header__container .header__help {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    animation: --fadeIn 1s ease 0.1s both;
+    cursor: help;
+}
+
+.header .header__container .header__help .header__help--parentcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 2vw;
+    height: 2vw;
+    animation: --shakeBack 0.2s ease-in-out both;
+    overflow: visible;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__container .header__help .header__help--parentcontainer .header__help--childcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 100%;
+    animation: --shakeBack 0.2s ease-in-out both;
+    overflow: hidden;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.header .header__container .header__help .header__help--parentcontainer .header__help--childcontainer .header__help--btn {
+    width: 2vw;
+    height: 2vw;
+    background: url(../../img/question.svg);
+    background-color: #ff6f2c30;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: --zoomOut 0.2s ease both;
+    transition-property: all;
+    transition-duration: 0.2s;
+}
+
+.header .header__container .header__help .header__help--parentcontainer .header__help--childcontainer .header__help--btn:hover {
+    animation: --zoomIn 0.2s ease both;
+    background-color: #ffffff;
+}
+
+.header .header__container .header__help .header__help--parentcontainer .header__help--childcontainer:hover {
+    animation: --shake 0.000001s ease-in-out both;
+    width: 2.5vw;
+    height: 2.5vw;
+}
+
+.header .header__container .header__help .header__help--parentcontainer:hover {
+    height: 2.5vw;
+}
+
+/*Side options container: nut symbol / bell symbol / profile photo*/
+
+.header .header__container .header__sideoptions {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 3vw;
+    width: 10vw;
+}
+
+/*Settings: nut symbol*/
+
+.header .header__container .header__sideoptions .header__sideoptions--settings {
+    width: 1.2vw;
+    height: 1.2vw;
+    background: url(../../img/nut.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: --rotateBack 0.2s ease both;
+    cursor: pointer;
+}
+
+.header .header__container .header__sideoptions .header__sideoptions--settings:hover {
+    animation: --rotate 0.2s ease both;
+}
+
+/*Notifications: bell symbol*/
+
+.header .header__container .header__sideoptions .header__sideoptions--notifications {
+    width: 1.2vw;
+    height: 1.2vw;
+    background: url(../../img/bell.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: --shakeBack 0.2s ease-in-out both;
+    cursor: pointer;
+}
+
+.header .header__container .header__sideoptions .header__sideoptions--notifications:hover {
+    animation: --shake 0.2s ease-in-out infinite both;
+}
+
+/*Profile options: profile photo*/
+
+.header .header__container .header__sideoptions .header__sideoptions--profilecontainer {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 3.7vw;
+    height: 3.7vw;
+    border-radius: 100%;
+    border: 0.2vw dashed #ff6f2c00;
+    transition-property: all;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+.header .header__container .header__sideoptions .header__sideoptions--profilecontainer:hover {
+    border: 0.2vw dotted #ff6f2c;
+}
+
+.header .header__container .header__sideoptions .header__sideoptions--profilecontainer a {
+    width: 3vw;
+    height: 3vw;
+}
+
+.header .header__container .header__sideoptions .header__sideoptions--profilecontainer a .header__sideoptions--profile {
+    width: 3vw;
+    height: 3vw;
+}
+
+
+
+
+
+
+#header__sideoptions--target:target {
+    z-index: 1;
+    background-color: #00000080;
+}
+
+.header__transparentbg {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000000;
+    transition-duration: 1s;
+    cursor: default;
+}
+
+.header__linkblockbg {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}
+
+#header__sideoptions--target:target > .header__linkblockbg {
+    display: none;
+}
+
+#header__sideoptions--target .header__sideoptions--useropts {
+    position: absolute;
+    top: 10vh;
+    right: -20%;
+    display: grid;
+    gap: 0.5vw;
+    grid-template-columns: 1fr;
+    transition-duration: 1s;
+}
+
+#header__sideoptions--target:target > .header__sideoptions--useropts {
+    right: 1.3%;
+}
+
+.header__sideoptions--userdata {
+    display: grid;
+    column-gap: 1vw;
+    grid-template-columns: 2fr 1fr;
+    padding: 0 0.5vw;
+    background-color: #ff6f2c;
+    border-radius: 0.8vw;
+}
+
+.header__sideoptions--useremail, .header__sideoptions--usertelnumber {
+    color: #ffffff80;
+    font-size: 0.7vw;
+    font-family: 'Myriad Pro Regular';
+    text-align: center;
+}
+
+.header__sideoptions--username {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    color: #ffffff;
+    font-size: 1.35vw;
+    font-family: 'Myriad Pro Regular';
+    text-align: center;
+    vertical-align: top;
+}
+
+.header__sideoptions--useropt {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    text-decoration: none;
+}
+
+.header__sideoptions--useropt .header__sideoptions--infotext {
+    padding-left: 0.5vw;
+    height: 3.2vw;
+    background-color: #ffffff;
+    border-radius: 0.8vw 0 0 0.8vw;
+    color: #a0a0a0;
+    font-size: 1vw;
+    font-family: 'Myriad Pro Semibold';
+}
+
+.header__sideoptions--userseeprofile-icon {
+    background: url(../../img/seeprofile.png);
+    background-position: 50%;
+    background-size: 2.5vw;
+}
+
+.header__sideoptions--usersecurityoptions-icon {
+    background: url(../../img/securityoptions.png);
+    background-position: 50%;
+    background-size: 2.5vw;
+}
+
+.header__sideoptions--usersettings-icon {
+    background: url(../../img/settings.png);
+    background-position: 50%;
+    background-size: 3.8vw;
+}
+
+.header__sideoptions--usernotifications-icon {
+    background: url(../../img/notifications.png);
+    background-position: 50%;
+    background-size: 3.5vw;
+}
+
+.header__sideoptions--usernotifications-icon {
+    background: url(../../img/notifications.png);
+    background-position: 50%;
+    background-size: 3.5vw;
+}
+
+.header__sideoptions--userlogout-icon {
+    background: url(../../img/logout.png);
+    background-position: 50%;
+    background-size: 2.2vw;
+}
+
+.header__sideoptions--userhelp-icon {
+    background: url(../../img/help.png);
+    background-position: 50%;
+    background-size: 2.8vw;
+}
+
+.header__sideoptions--usertheme-icon {
+    background: url(../../img/theme.png);
+    background-position: 50%;
+    background-size: 2.4vw;
+}
+
+.header__sideoptions--userlanguage-icon {
+    background: url(../../img/language.png);
+    background-position: 50%;
+    background-size: 2.8vw;
+}
+
+.header__sideoptions--icon {
+    margin: 0 0 0.1vw -0.3vw;
+    width: 5vw;
+    height: 3.2vw;
+    background-color: #f0f0f0;
+    background-repeat: no-repeat;
+    border-radius: 0 0.8vw 0.8vw 0;
+}
+
+
+
+
+
+
+/*Section container*/
+
+.section {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.section .section__container {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: inline-grid;
+}
+
+/*Title: "Panel de Indicadores"*/
+
+.section .section__container .section__title {
+    margin: calc(4.4vw + 4vh) 0 0;
+    font-size: 2.3vmax;
+    font-family: 'Myriad Pro Regular', sans-serif;
+    text-align: center;
+}
+
+/*Description text: "Aquí puedes visualizar los indicadores propuestos y añadidos por tu equipo de trabajo."*/
+
+.section .section__container .section__description {
+    margin: 1.45vh 0 0;
+    font-size: 1.3vmax;
+    font-family: 'Myriad Pro Light', sans-serif;
+    text-align: center;
+}
+
+/*Indicator data containers*/
+
+.section .section__container .section__indicatordata {
+    position: relative;
+    margin: 0 auto 0.1vh;
+    width: 90vw;
+    height: 3.2vmax;
+}
+
+/*Indicator titles: "Indicador" / "Descripción" / "Categoría" / "Fecha de Inicio"
+/ "Fecha de Terminación" / "Fórmula" / "Frecuencia" / "Cumplimiento" / "Área"*/
+
+.section .section__container .section__indicatordata--titles .section__indicatortitles {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5vh auto 0;
+    width: 88vw;
+    font-size: 1.3vmax; 
+    font-family: 'Myriad Pro Regular', sans-serif;
+    text-align: center;
+}
+
+/*Indicator description title: "Descripción"*/
+
+.section .section__container .section__indicatordata--titles .section__indicatortitles .section__indicatortitle--description {
+    margin-left: 3%;
+}
+
+/*Indicator data containers (without motion controls: ☰)*/
+
+.section .section__container .section__indicatordata .section__indicator {
+    display: flex;
+    padding-bottom: 0.2vw;
+    width: 88vw;
+    height: 3vw;
+    color: #505050;
+    font-size: 1vmax;
+    font-family: 'Myriad Pro Light', sans-serif;
+    border: 0.1vw solid #a0a0a0;
+    border-radius: 1.5vw;
+}
+
+/*Indicator names: "Modelado 3D" / "Finca Galeón" / "Colegios Privado" /
+"Electrodomésticos" / "Estrato 2 - Floridablanca" / "Jóvenes en Acción"*/
+
+.section .section__container .section__indicatordata .section__indicator .section__indicator--indicator {
+    margin-left: 1.2%;
+    width: 12%;
+}
+
+/*Indicator descriptions: "Interés por dise........." / "Diseño de maque......." / "Se busca llegar a los...." /
+"Ventas de electro......" / "Impacto en los sec....." / "Impacto en los sec....."*/
+
+.section .section__container .section__indicatordata .section__indicator .section__indicator--description {
+    width: 10%;
+    margin-left: 0.8%;
+}
+
+/*Indicator categories: "Baja" / "baja" / "Media" / "Media" / "Alta" / "Alta"*/
+
+.section .section__container .section__indicatordata .section__indicator .section__indicator--category {
+    width: 3%;
+    margin-left: 2.3%;
+}
+
+/*Indicator start dates: "12/05/21" / "12/04/21" / "24/04/21" / "12/04/21" / "12/04/21" / "15/02/21"*/
+
+.section .section__container .section__indicatordata .section__indicator .section__indicator--startdate {
+    width: 5%;
+    margin-left: 6.55%;
+    text-align: center;
+}
+
+/*Indicator termination dates: "12/12/21" / "12/05/21" / "12/11/21" / "12/09/21" / "12/09/21" / "09/11/21"*/
+
+.section .section__container .section__indicatordata .section__indicator .section__indicator--terminationdate {
+    width: 5%;
+    margin-left: 9.5%;
+    text-align: center;
+}
+
+/*Indicator formulas: "Met.Ágil" / "Met.Ágil" / "Met.Fibo" / "N/A" / "Met.Expo" / "Met.Expo"*/
+
+.section .section__container .section__indicatordata .section__indicator .section__indicator--formula {
+    width: 4%;
+    margin-left: 8.6%;
+    text-align: center;
+}
+
+/*Indicator frequencies: "1/4" / "1/4" / "1/4" / "1/3" / "1/4" / "1/2"*/
+
+.section .section__container .section__indicatordata .section__indicator .section__indicator--frequency {
+    width: 4%;
+    margin-left: 5.4%;
+    text-align: center;
+}
+
+/*Indicator compliance diagrams*/
+
+.section .section__container .section__indicatordata .section__indicator .section__indicator--compliance {
+    position: relative;
+    width: 3.5vw;
+    margin: 0.13vw 0 0 7.3%;
+    text-align: center;
+}
+
+.section .section__container .section__indicatordata .section__indicator .section__indicator--compliance .section__indicator--compliancediagram {
+    fill: #00000000;
+    stroke: var(--color);
+    stroke-width: 0.4vw;
+    stroke-dasharray: 0 100;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50%;
+    animation-name: --fill;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.section .section__container .section__indicatordata .section__indicator .section__indicator--compliance span {
+    position: absolute;
+    top: 5%;
+    right: 0;
+    bottom: 0;
+    left: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8vw;
+}
+
+/*Indicator areas: "Marketing" / "Diseño" / "Developers" / "Gerencia" / "Marketing" / "Producción"*/
+
+.section .section__container .section__indicatordata .section__indicator .section__indicator--area {
+    width: 5vw;
+    margin-left: 4.7%;
+    text-align: center;
+}
+
+/*Indicator checkboxes*/
+
+.section .section__container .section__indicatordata .section__indicator--checkboxcontainer {
+    position: absolute;
+    top: 0.75vw;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    width: 1.5vw;
+    height: 1.875vw;
+}
+
+.section .section__container .section__indicatordata .section__indicator--checkboxcontainer .section__indicator--checkbox {
+    margin: 0.21vw;
+    width: 3vw;
+    height: 3vw;
+    background-color: #000000;
+}
+
+/*Delete button: "Eliminar Seleccionados"*/
+
+.section .section__container .section__btn {
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5% auto 0;
+    width: 15vw;
+    height: 3vw;
+    background-color: #ff6f2c;
+    border-radius: 2.5vw;
+    color: #ffffff;
+    font-size: 1.1vmax;
+    font-family: 'Myriad Pro Light', sans-serif;
+    text-decoration: none;
+}
+
+
+
+
+
+.header--mobile {
+    z-index: 2;
+    position: fixed;
+    left: -56vw;
+    display: none;
+    margin: 0;
+    width: 60vw;
+    height: 100vh;
+    transition-property: all;
+    transition-duration: 1s;
+    animation: --fadeIn 0.5s ease 1s both;
+}
+
+.header--mobile:hover {
+    left: 0;
+}
+
+.header--mobile .header--mobile__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 4vw 10.5vw 0 0;
+    width: 54vw;
+    height: 100vh;
+    background-color: #ffffff;
+    border-right: 1px solid #a0a0a0;
+
+}
+
+.header--mobile .header--mobile__container .header--mobile__menubtncontainer {
+    position: absolute;
+    right: -5%;
+    width: 5.5vw;
+    height: 100vh;
+}
+
+.header--mobile .header--mobile__container .header--mobile__menubtncontainer .header--mobile__menubtn {
+    position: absolute;
+    top: 50%;
+    width: 5.5vw;
+    height: 5.5vw;
+    background: url(../../img/arrow.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.header--mobile .header--mobile__container .header--mobile__link, 
+.header--mobile .header--mobile__container .header--mobile__useropts .header--mobile__useroptstitle {
+    display: flex;
+    align-items: center;
+    width: 40vw;
+    height: 5vh;
+    text-decoration: none;
+}
+
+.header--mobile .header--mobile__container .header--mobile__link .header--mobile__home--btn {
+    background: url(../../img/logo.svg);
+    background-size: contain;
+}
+
+.header--mobile .header--mobile__container .header--mobile__link .header--mobile__add--btn {
+    background: url(../../img/plus.svg);
+    background-size: contain;
+    border-radius: 100%;
+}
+
+.header--mobile .header--mobile__container .header--mobile__link .header--mobile__reload--btn {
+    background: url(../../img/reload.svg);
+    background-size: contain;
+}
+
+.header--mobile .header--mobile__container .header--mobile__link .header--mobile__delete--btn {
+    background: url(../../img/trash.svg);
+    background-size: contain;
+}
+
+.header--mobile .header--mobile__container .header--mobile__link .header--mobile__report--btn {
+    background: url(../../img/bug.svg);
+    background-size: contain;
+}
+
+.header--mobile .header--mobile__container .header--mobile__link .header--mobile__help--btn {
+    background: url(../../img/question.svg);
+    background-size: contain;
+}
+
+.header--mobile .header--mobile__container .header--mobile__useropts {
+    display: flex;
+    flex-direction: column;
+    margin: 33vh 0 0 6vw;
+}
+
+.header--mobile .header--mobile__container .header--mobile__useropts .header--mobile__useroptstitle {
+    margin-bottom: 4vw;
+}
+
+.header--mobile .header--mobile__container .header--mobile__useropts .header--mobile__useroptstitle .header--mobile__profile--img {
+    margin-right: 2vw;
+    width: 10vw;
+    height: 10vw;
+    background: url(../../img/profile.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.header--mobile .header--mobile__container .header--mobile__useropts .header--mobile__useroptstitle .header--mobile__usertitle {
+    color: #a0a0a0;
+}
+
+.header--mobile .header--mobile__container .header--mobile__useropts .header--mobile__link {
+    height: 3.5vh;
+}
+
+.header--mobile .header--mobile__container .header--mobile__useropts .header--mobile__link .header--mobile__seeprofile--btn {
+    background: url(../../img/seeprofile.png);
+    background-size: contain;
+}
+
+.header--mobile .header--mobile__container .header--mobile__useropts .header--mobile__link .header--mobile__securityoptions--btn {
+    background: url(../../img/securityoptions.png);
+    background-size: contain;
+}
+
+.header--mobile .header--mobile__container .header--mobile__useropts .header--mobile__link .header--mobile__settings--btn {
+    background: url(../../img/settings.png);
+    background-position: 50%;
+    background-size: 9vw;
+}
+
+.header--mobile .header--mobile__container .header--mobile__useropts .header--mobile__link .header--mobile__notifications--btn {
+    background: url(../../img/notifications.png);
+    background-position: 50%;
+    background-size: 8.5vw;
+}
+
+.header--mobile .header--mobile__container .header--mobile__useropts .header--mobile__link .header--mobile__logout--btn {
+    background: url(../../img/logout.png);
+    background-position: 50%;
+    background-size: contain;
+}
+
+.header--mobile .header--mobile__container .header--mobile__useropts .header--mobile__decorationline {
+    margin: 2vw 0;
+    width: 46vw;
+    height: 0;
+    border: 0.1vw solid #a0a0a0;
+}
+
+.header--mobile .header--mobile__container .header--mobile__useropts .header--mobile__link .header--mobile__theme--btn {
+    background: url(../../img/theme.png);
+    background-position: 50%;
+    background-size: contain;
+}
+
+.header--mobile .header--mobile__container .header--mobile__useropts .header--mobile__link .header--mobile__language--btn {
+    background: url(../../img/language.png);
+    background-position: 50%;
+    background-size: contain;
+}
+
+.header--mobile .header--mobile__container .header--mobile__link .header--mobile__btn {
+    margin-right: 2vw;
+    width: 5.5vw;
+    height: 5.5vw;
+    background-repeat: no-repeat;
+}
+
+.header--mobile__infotext {
+    color: #000000;
+    font-size: 4vw;
+    font-family: 'Myriad Pro Semibold', sans-serif;
+}
+
+.header--mobile .header--mobile__container .header--mobile__useropts .header--mobile__link .header--mobile__useropt {
+    color: #a0a0a0;
+    font-size: 3vw;
+}
+
+.section--mobile {
+    display: none;
+    padding-left: 11vw;
+    width: 85.5vw;
+}
+
+.section--mobile .section--mobile__container {
+    position: absolute;
+    top: 0;
+    display: inline-grid;
+    width: 85.5vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.section--mobile .section--mobile__container .section--mobile__title {
+    margin: calc(4.4vw + 4vh) 0 0;
+    width: 86vw;
+    font-size: 4.3vmax;
+    font-family: 'Myriad Pro Regular', sans-serif;
+    text-align: center;
+}
+
+.section--mobile .section--mobile__container .section--mobile__description {
+    margin: 1.45vh 0 10vw;
+    width: 86vw;
+    font-size: 2vmax;
+    font-family: 'Myriad Pro Light', sans-serif;
+    text-align: center;
+}
+
+.section--mobile .section--mobile__container .section--mobile__indicatordata {
+    position: relative;
+    display: flex;
+    justify-content: left;
+    margin: 1.5vw;
+}
+
+.section--mobile .section--mobile__container .section--mobile__indicatordata .section--mobile__indicatorcontent--indicator-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.section--mobile .section--mobile__container .section--mobile__indicatordata
+.section--mobile__indicatorcontent--indicator-content .section--mobile__indicator {
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75vw;
+    height: 7vh;
+    background-color: #ffffff;
+    border: 0.1vw solid #a0a0a0;
+    border-radius: 5vw;
+    color: #505050;
+    font-size: 5vw;
+    font-family: 'Myriad Pro Light', sans-serif;
+}
+
+.section--mobile .section--mobile__container .section--mobile__indicatordata
+.section--mobile__indicatorcontent--indicator-content .section--mobile__indicatorcontent {
+    position: relative;
+    display: grid;
+    gap: 1.4vh;
+    margin-top: -5.1vh;
+    padding: 8vw 5vw 8vw;
+    width: 65.5vw;
+    height: 1vh;
+    background-color: #f0f0f0;
+    border-radius: 0 0 5vw 5vw;
+    transition-property: margin-top, height;
+    transition-duration: 0.3s;
+    transition-delay: 0.2s;
+}
+
+.section--mobile .section--mobile__container .section--mobile__indicatordata
+.section--mobile__indicatorcontent--indicator-content .section--mobile__indicatorcontent:hover {
+    margin-top: -2.1vh;
+    height: 48vh;
+    transition-duration: 0.3s;
+}
+
+.section--mobile .section--mobile__container .section--mobile__indicatordata 
+.section--mobile__indicatorcontent--indicator-content .section--mobile__indicatorcontent .section--mobile__indicator--item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1vh;
+    opacity: 0;
+    background-color: #f6f6f6;
+    border-radius: 2.5vw;
+    transition-property: opacity;
+    transition-duration: 0.3s;
+}
+
+.section--mobile .section--mobile__container .section--mobile__indicatordata .section--mobile__indicatorcontent--indicator-content
+.section--mobile__indicatorcontent:hover > .section--mobile__indicator--item {
+    opacity: 100%;
+    transition-duration: 0.3s;
+    transition-delay: 0.4s;
+}
+
+.section--mobile .section--mobile__container .section--mobile__indicatordata 
+.section--mobile__indicatorcontent--indicator-content .section--mobile__indicatorcontent .section--mobile__indicator--description {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    text-align: justify;
+}
+
+.section--mobile .section--mobile__container .section--mobile__indicatordata 
+.section--mobile__indicatorcontent--indicator-content .section--mobile__indicatorcontent .section--mobile__indicator--startdate {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.section--mobile .section--mobile__container .section--mobile__indicatordata 
+.section--mobile__indicatorcontent--indicator-content .section--mobile__indicatorcontent .section--mobile__indicator--terminationdate {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.section--mobile .section--mobile__container .section--mobile__indicatordata 
+.section--mobile__indicatorcontent--indicator-content .section--mobile__indicatorcontent .section--mobile__indicator--area {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.section--mobile .section--mobile__container .section--mobile__indicatordata 
+.section--mobile__indicatorcontent--indicator-content .section--mobile__indicatorcontent .section--mobile__indicator--compliance {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.13vw 0 0;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    text-align: center;
+}
+
+.section--mobile .section--mobile__container .section--mobile__indicatordata .section--mobile__indicatorcontent--indicator-content
+.section--mobile__indicatorcontent .section--mobile__indicator--compliance svg {
+    background-color: white;
+    border-radius: 100%;
+}
+
+.section--mobile .section--mobile__container .section--mobile__indicatordata .section--mobile__indicatorcontent--indicator-content
+.section--mobile__indicatorcontent .section--mobile__indicator--compliance svg .section--mobile__indicator--compliancediagram {
+    fill: #00000000;
+    stroke: var(--color);
+    stroke-width: 1.3vw;
+    stroke-dasharray: var(--percentage) 100;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50%;
+}
+
+.section--mobile .section--mobile__container .section--mobile__indicatordata .section--mobile__indicatorcontent--indicator-content
+.section--mobile__indicatorcontent .section--mobile__indicator--compliance span {
+    position: absolute;
+    top: 21%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #505050;
+    font-size: 3vw;
+    font-family: 'Myriad Pro Light', sans-serif;
+}
+
+.section--mobile .section--mobile__container .section--mobile__indicatordata .section--mobile__indicatorcontent--indicator-content
+.section--mobile__indicatorcontent .section--mobile__indicator--item .section--mobile__indicator--title {
+    margin: 0;
+    font-size: 1.8vmax; 
+    font-family: 'Myriad Pro Regular', sans-serif;
+}
+
+.section--mobile .section--mobile__container .section--mobile__indicatordata .section--mobile__indicatorcontent--indicator-content
+.section--mobile__indicatorcontent .section--mobile__indicator--item .section--mobile__indicator--content {
+    color: #505050;
+    font-size: 1.5vmax;
+    font-family: 'Myriad Pro Light', sans-serif;
+}
+
+.section--mobile .section--mobile__container .section--mobile__indicatordata .section--mobile__indicatorcontent--indicator-content
+.section--mobile__indicatorcontent .section--mobile__indicatorcontent--btn {
+    position: absolute;
+    bottom: 4.5%;
+    justify-self: center;
+    margin-right: 2.5vw;
+    width: 5.5vw;
+    height: 5.5vw;
+    background: url(../../img/arrow.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: rotate(90deg);
+    transition-property: bottom;
+    transition-duration: 0.3s;
+    transition-delay: 0.2s;
+}
+
+.section--mobile .section--mobile__container .section--mobile__indicatordata .section--mobile__indicatorcontent--indicator-content
+.section--mobile__indicatorcontent:hover > .section--mobile__indicatorcontent--btn {
+    bottom: 1%;
+    transition-duration: 0.3s;
+}
+
+.section--mobile .section--mobile__container .section--mobile__indicatordata .section--mobile__indicator--checkboxcontainer {
+    display: flex;
+    flex-direction: column;
+    margin: 3.5vw 0 0 1.7vw;
+    width: 7vw;
+    height: 7vw;
+}
+
+.section--mobile .section--mobile__container .section--mobile__indicatordata .section--mobile__indicator--checkbox {
+    width: 7vw;
+    height: 7vw;
+}
+
+.section--mobile .section--mobile__container .section--mobile__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 9.5% auto;
+    width: 70vw;
+    height: 13vw;
+    background-color: #ff6f2c;
+    border-radius: 10vw;
+    color: #ffffff;
+    font-size: 3vmax;
+    font-family: 'Myriad Pro Light', sans-serif;
+    text-decoration: none;
+}
+
+@media (orientation: portrait) {
+    body {
+        overflow-y: auto;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .header--mobile {
+        display: block;
+    }
+
+    .section {
+        display: none;
+    }
+
+    .section .section__container .section__indicatordata {
+        display: none;
+    }
+
+    .section--mobile {
+        display: block;
+    }
+}

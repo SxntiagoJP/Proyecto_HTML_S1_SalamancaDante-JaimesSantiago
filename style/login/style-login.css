@@ -45,7 +45,7 @@ body {
 .screen .screen__logo {
     position: absolute;
     margin: auto;
-    width: 9vmax;
+    width: 9.9vmax;
     height: 9vmax;
     background: url(../../img/logo.svg);
     background-repeat: no-repeat;
@@ -75,7 +75,7 @@ body {
 
 .screen .screen__loginscreen .screen__loginscreen--logo {
     width: 4vmax;
-    height: 5vmax;
+    height: 4.4vmax;
     margin: 1vmax auto;
     background: url(../../img/login-logo.png);
     background-repeat: no-repeat;
