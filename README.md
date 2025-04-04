@@ -5,8 +5,15 @@ Este proyecto consiste en un sistema de autenticación y visualización de indic
 
 | Tabla de contenidos |
 |--------------------|
+| [Maquetación en Figma](#Maquetacion) |
 | [¿Cómo ejecutar este archivo?](#Ejecucion) |
 | [Funcionamiento del programa](#Funcionamiento) |
+
+<a name="Maquetacion"></a>
+
+## Maquetación en Figma
+
+   [https://www.figma.com/design/fOPhs4MTcEUvajGk4cxH5I/Sin-t%C3%ADtulo](https://www.figma.com/design/fOPhs4MTcEUvajGk4cxH5I/Sin-t%C3%ADtulo)
 
 <a name="Ejecucion"></a>
 
@@ -16,7 +23,7 @@ Puede visualizar las páginas del proyecto de las siguientes maneras:
 
 1. Accediendo directamente a través del siguiente link:
 
-    [https://sxntiagojp.github.io/Proyecto_HTML_S1_SalamancaDante-JaimesSantiago/](https://sxntiagojp.github.io/Proyecto_HTML_S1_SalamancaDante-JaimesSantiago/)
+   [https://sxntiagojp.github.io/Proyecto_HTML_S1_SalamancaDante-JaimesSantiago/](https://sxntiagojp.github.io/Proyecto_HTML_S1_SalamancaDante-JaimesSantiago/)
 
 2. Clonando el repositorio desde una terminal:
    ```git clone https://github.com/SxntiagoJP/Proyecto_HTML_S1_SalamancaDante-JaimesSantiago```
